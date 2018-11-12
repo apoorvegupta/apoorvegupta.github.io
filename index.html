@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <base target="_blank">
+  <meta charset="UTF-8" />
+  <title>Apoorve Gupta | Developer</title>
+  <!--<a href="C:/Users/PARMESH%20GUPTA/Downloads/Website/mysite-master/index.html" style="color: white;", title="Know More ">Apoorve Developer</a>-->
+  <!--<a href="" class="know_how" onclick="location.reload();location.href='C:/Users/PARMESH%20GUPTA/Downloads/Website/mysite-master/index.html'">Know More</a> -->
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style5.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
+  <!-- remember, jQuery is completely optional -->
+  <!-- <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script> -->
+  <script type="text/javascript" src="js/jquery.particleground.js"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
+  <script>
+	var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span>'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+	
+  
+  </script>
+  	
+  <style>
+
+  .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+body {
+  text-align: center;
+  color:#fff;
+}
+
+* { color:#fff; text-decoration: none;}
+
+</style>
+</head>
+
+<body>
+
+<div id="particles">
+	  <div id="intro">
+		  <h2 style="font-size:240%;"><a href="" class="typewrite" data-period="2000" data-type='[ "Hi, I Am Apoorve Gupta.", "I Am Creative.", "I Love to Develop." ]'><span></span></a>&#95;</h2>
+			<hr style="width: 50%; background-color: #E83951; border-color: #E83951;">
+		<a href="https://www.linkedin.com/in/guptaapoorve" style="color: white;"><i class="fab fa-linkedin" style="font-size: 2em;"></i></a>
+		&nbsp
+		<a href="https://www.facebook.com/apoorve.gupta.779" style="color: white;"><i class="fab fa-facebook" style="font-size: 2em;"></i></a>
+		&nbsp
+		<a href="https://github.com/apoorvegupta/" style="color: white;"><i class="fab fa-github" style="font-size: 2em;"></i></a>
+		&nbsp
+		<a href="https://medium.com/@gapoorve/" style="color: white;"><i class="fab fa-medium" style="font-size: 2em;"></i></a>
+		&nbsp
+		<button onclick="location.reload();location.href='./preloader.html'" class="button" style="vertical-align:middle"><span>Learn More</span> </button>
+	  </div>
+</div>
+
+
+
+
+</body>
+
+</html>
