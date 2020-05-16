@@ -78,44 +78,17 @@
   	
   <style>
 
-  .button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #000000;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 14px;
-  padding: 10px;
-  width: 100px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 2px;
+button {
+  margin: 12px;
 }
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+.btn-default {
+  background-color: #000;
+  color: #ffe100;
 }
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 15px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+.btn-primary {
+  background-color:
+    #ffe100;
+  color: #000;
 }
 
 @keyframes glowing {
@@ -125,7 +98,7 @@
   100% { box-shadow: 0 0 -10px #39e8d7; }
 }
 
-.button:glow {
+.button-glow {
   animation: glowing 5000ms infinite;
 }
 body {
